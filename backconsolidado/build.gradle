@@ -1,7 +1,9 @@
 plugins {
 	id 'java'
-	id 'org.springframework.boot' version '3.1.0'
+	id 'org.springframework.boot' version '3.0.6'
 	id 'io.spring.dependency-management' version '1.1.0'
+	id 'jacoco'
+	id 'eclipse'
 }
 
 group = 'com.app'
@@ -15,6 +17,100 @@ repositories {
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	implementation 'org.springframework:spring-web:6.0.7'
+	implementation 'com.fasterxml.jackson.core:jackson-databind:2.14.2'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    
+    implementation 'org.springframework.boot:spring-boot-starter'
+	//Interactuar con HTML
+	implementation 'org.springframework:spring-web:6.0.7'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	
+	//Interactuar con JSON
+	implementation 'com.fasterxml.jackson.core:jackson-databind:2.14.2'
+    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+    implementation 'org.springframework.boot:spring-boot-starter-data-rest'
+    
+    //Interactuar con BD
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.apache.commons:commons-lang3:3.6'	
+	implementation 'com.mysql:mysql-connector-j:8.0.31'
+	
+	implementation 'com.h2database:h2'
+	
+	//Mantenibilidad de Codigo / *
+	compileOnly 'org.projectlombok:lombok'
+    developmentOnly 'org.springframework.boot:spring-boot-devtools'
+    annotationProcessor 'org.projectlombok:lombok'
+    
+    
+    
+    
+    
+    
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
+
+jacoco {
+    toolVersion = "0.8.7"
+    reportsDirectory = layout.buildDirectory.dir('customJacocoReportDir')
+}
+
+jacocoTestReport {
+    reports {
+			xml.required = true
+    }
+}
+
+test {
+    finalizedBy jacocoTestReport // report is always generated after tests run
+}
+
+jacocoTestReport {
+    dependsOn test // tests are required to run before generating the report
+}
+
+
+jacocoTestCoverageVerification {
+    violationRules {
+        rule {
+            limit {
+                minimum = 0.5
+            }
+        }
+
+        rule {
+            enabled = false
+            element = 'CLASS'
+            includes = ['org.gradle.*']
+
+            limit {
+                counter = 'LINE'
+                value = 'TOTALCOUNT'
+                maximum = 0.3
+            }
+        }
+    }
+}
+
+test {
+    jacoco {
+        destinationFile = layout.buildDirectory.file('jacoco/jacocoTest.exec').get().asFile
+        classDumpDir = layout.buildDirectory.dir('jacoco/classpathdumps').get().asFile
+    }
+}
+
+
+tasks.register('TareaCustom') {
+    doLast {
+        println 'Hello world!'
+        println ' Leer Documentacion https://docs.gradle.org/current/userguide/tutorial_using_tasks.html '
+    }
 }
 
 tasks.named('test') {
