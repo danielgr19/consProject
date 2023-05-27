@@ -15,11 +15,6 @@ repositories {
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-	implementation 'org.springframework:spring-web:6.0.7'
-	implementation 'com.fasterxml.jackson.core:jackson-databind:2.14.2'
-    implementation 'org.springframework.boot:spring-boot-starter-web'
-    
-    implementation 'org.springframework.boot:spring-boot-starter'
 }
 
 tasks.named('test') {
