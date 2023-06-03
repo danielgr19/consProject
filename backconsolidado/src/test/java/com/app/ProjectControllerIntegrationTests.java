@@ -24,6 +24,17 @@ public class ProjectControllerIntegrationTests
 
 	@Autowired
 	private TestRestTemplate restTemplate;
+	
+	@Test
+	//@Sql({"/import_senior_projects.sql"})
+	public void testAllProjects() 
+	{
+		List<Project> projects = this.restTemplate
+		.getForObject("http://localhost:" + port + "/api/projectCustomAPI/projectgetall", Projects.class)
+		.getProjectList();
+				
+		assertTrue(projects.size() >= 1);
+}
 
 	@Test
 	public void testAddProject() 
@@ -38,16 +49,7 @@ public class ProjectControllerIntegrationTests
 	}
 	
 	
-	@Test
-	//@Sql({"/import_senior_projects.sql"})
-	public void testAllProjects() 
-	{
-		List<Project> projects = this.restTemplate
-		.getForObject("http://localhost:" + port + "/api/projectCustomAPI/projectgetall", Projects.class)
-		.getProjectList();
-				
-		assertTrue(projects.size() >= 1);
-}
+
 
 
 	
