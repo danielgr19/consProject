@@ -19,24 +19,30 @@ const EditTeamMembersForm = (props) => {
         props.updateTeamMembers(teamMembers.id, teamMembers);
       }}
     >
-      <label>description</label>
+      <label>Name</label>
       <input
         type="text"
-        name="description"
-        value={teamMembers.description}
+        name="name"
+        value={teamMembers.name}
         onChange={handleInputChange}
       />
-      <label>type_of_project</label>
+      <label>Last name</label>
       <input
         type="text"
-        name="type_of_project"
-        value={teamMembers.type_of_project}
+        name="lastName"
+        value={teamMembers.lastName}
         onChange={handleInputChange}
       />
 
+      <label>Rol</label>
+      <input
+        type="text"
+        name="rol"
+        value={teamMembers.email}
+        onChange={handleInputChange}
+      />
 
-
-      <button>Update TeamMembers</button>
+      <button>Update Team Members</button>
       <button
         onClick={() => props.setEditing(false)}
         className="button muted-button"

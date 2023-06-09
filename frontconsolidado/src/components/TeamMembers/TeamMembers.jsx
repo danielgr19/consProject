@@ -7,9 +7,9 @@ import axios from "axios";
 
 const TeamMembers = () => {
   const TeamMembersData = [
-    { id: 1, description: "Juan", type_of_project: "Tania"},
-    { id: 2, description: "Perez", type_of_project: "Craig" },
-    { id: 3, description: "guerra", type_of_project: "Ben" },
+    { id: 1, name: "Juan", lastName: "Tania", rol: "Administrador" },
+    { id: 2, name: "Perez", lastName: "Craig", rol: "project Manager" },
+    { id: 3, name: "guerra", lastName: "Ben", rol: "user" },
   ];
   const [teamMemberss, setTeamMemberss] = useState(TeamMembersData);
   const [showLoading, setShowLoading] = useState(true);
@@ -37,7 +37,7 @@ const TeamMembers = () => {
     axios
       .post(apiUrl + "addteamMembers", data)
       .then((result) => {
-        setEmployees([...teamMemberss, result.data]);
+        setTeamMemberss([...teamMemberss, result.data]);
       })
       .catch((error) => setShowLoading(false));
 
@@ -67,8 +67,9 @@ const TeamMembers = () => {
     setTeamMemberss(teamMemberss.filter((teamMembers) => teamMembers.id !== id));
     const data = {
       id: id,
-      description: "",
-      type_of_project: "",
+      name: "",
+      lastName: "",
+      rol: "",
     };
     axios
       .post(apiUrl + "teamMembersremove", data)
@@ -82,8 +83,9 @@ const TeamMembers = () => {
 
   const initialFormState = {
     id: null,
-    description: "",
-    type_of_project: "",
+    name: "",
+    lastName: "",
+    rol: "",
   };
 
   const [currentTeamMembers, setCurrentTeamMembers] = useState(initialFormState);
@@ -92,8 +94,9 @@ const TeamMembers = () => {
     setEditing(true);
     setCurrentTeamMembers({
       id: teamMembers.id,
-      description: teamMembers.description,
-      type_of_project: teamMembers.type_of_project,
+      name: teamMembers.name,
+      lastName: teamMembers.lastName,
+      rol: teamMembers.rol,
     });
   };
 
@@ -106,8 +109,9 @@ const TeamMembers = () => {
     );
     const data = {
       id: updatedTeamMembers.id,
-      description: updatedTeamMembers.name,
-      type_of_project: updatedTeamMembers.lastName,
+      name: updatedTeamMembers.name,
+      lastName: updatedTeamMembers.lastName,
+      rol: updatedTeamMembers.rol,
     };
     axios
       .post(apiUrl + "updateteamMembers", data)
@@ -124,7 +128,7 @@ const TeamMembers = () => {
         <div className="flex-large">
           {editing ? (
             <div>
-              <h2>Edit Project Type</h2>
+              <h2>Edit Team Members</h2>
               <EditTeamMembersForm
                 setEditing={setEditing}
                 currentTeamMembers={currentTeamMembers}
@@ -133,14 +137,14 @@ const TeamMembers = () => {
             </div>
           ) : (
             <div>
-              <h2>Add Project Type</h2>
+              <h2>Add Team Members</h2>
               <AddTeamMembersForm addTeamMembers={addTeamMembers} />
             </div>
           )}
         </div>
 
         <div className="flex-large">
-          <h2>View Project Types</h2>
+          <h2>View Team Memberss</h2>
           <TeamMembersTable
             teamMemberss={teamMemberss}
             deleteTeamMembers={deleteTeamMembers}

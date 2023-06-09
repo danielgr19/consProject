@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 const AddTeamMembersForm = (props) => {
 
-const initialFormState = { id: null, description: "", type_of_project: "" };
+const initialFormState = { id: null, name: "", lastName: "" , rol: ""};
 const [teamMembers, setTeamMembers] = useState(initialFormState);
 
 const handleInputChange = (event) => {
@@ -15,30 +15,36 @@ const handleInputChange = (event) => {
     <form
       onSubmit={(event) => {
         event.preventDefault();
-        if (!teamMembers.description
-           || !teamMembers.type_of_project)
+        if (!teamMembers.name || !teamMembers.lastName || !teamMembers.rol)
           return;
 
         props.addTeamMembers(teamMembers);
         setTeamMembers(initialFormState);
       }}
     >
-      <label>description</label>
+      <label>Name</label>
       <input
         type="text"
-        name="description"
-        value={teamMembers.description}
+        name="name"
+        value={teamMembers.name}
         onChange={handleInputChange}
       />
-      <label>type_of_project</label>
+      <label>last name</label>
       <input
         type="text"
-        name="type_of_project"
-        value={teamMembers.type_of_project}
+        name="lastName"
+        value={teamMembers.lastName}
         onChange={handleInputChange}
       />
 
-      <button>Add new Project Type</button>
+      <label>rol</label>
+      <input
+        type="text"
+        name="rol"
+        value={teamMembers.rol}
+        onChange={handleInputChange}
+      />
+      <button>Add new Team Members</button>
     </form>
   );
 };
