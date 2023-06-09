@@ -2,12 +2,12 @@ import React from "react";
 import './Header.scss';
 import { Link } from "react-router-dom";
 //import "../assets/styles/components/Header.scss";
-//import logo from "../assets/static/logo.png";
+//import logo from "../img/logo.png";
 
 const Header = () => (
   <header className="header">
     <Link to="/">
-      <img className="header__img" src="{ logo }" alt="Logo" />
+      <img className="header__img" src="http://localhost:8080/logo512.png" alt="logo" />
     </Link>
 
     <div className="header__menu">

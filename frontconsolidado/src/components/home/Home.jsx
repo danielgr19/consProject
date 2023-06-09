@@ -3,7 +3,7 @@ import './Home.scss';
 
 const Home = () => (
     <div className="SinEspecificar">
-        HOLA SOY EL HOME
+        SOFTWARE DE GESTION DE PROYECTOS
     </div>
 )
 export default Home;
