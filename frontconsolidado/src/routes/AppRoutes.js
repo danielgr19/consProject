@@ -8,6 +8,7 @@ import TeamMembers from "../components/TeamMembers/TeamMembers";
 import State from "../components/state/State";
 import Project from "../components/project/Project";
 import ProjectType from "../components/ProjectType/ProjectType";
+import Task from "../components/task/Task";
 import NotFound from "../components/notfound/NotFound";
 
 const AppRoutes = () => (
@@ -19,6 +20,8 @@ const AppRoutes = () => (
                 <Route path="/ProjectType" exact element={<ProjectType/>}/>
                 <Route path="/Project" exact element={<Project/>}/>
                 <Route path="/State" exact element={<State/>}/>
+                <Route path="/Task" exact element={<Task/>}/>
+                
                 <Route element={<NotFound/>}/>
             </Routes>
         </Layout>

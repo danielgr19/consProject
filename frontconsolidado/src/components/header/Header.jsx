@@ -31,6 +31,9 @@ const Header = () => (
         <li>
           <Link to="/State">State</Link>
         </li>
+        <li>
+          <Link to="/Task">Tasks</Link>
+        </li>
       </ul>
     </div>
   </header>
