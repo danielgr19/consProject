@@ -5,6 +5,9 @@ import { BrowserRouter as  Router, Routes, Route, Link } from "react-router-dom"
 import Layout from "../containers/LayoutPrincipal/LayoutPrincipal";
 import Home from "../components/home/Home";
 import TeamMembers from "../components/TeamMembers/TeamMembers";
+import State from "../components/state/State";
+import Project from "../components/project/Project";
+import ProjectType from "../components/ProjectType/ProjectType";
 import NotFound from "../components/notfound/NotFound";
 
 const AppRoutes = () => (
@@ -13,6 +16,9 @@ const AppRoutes = () => (
             <Routes>
                 <Route path="/" exact element={<Home/>}/>
                 <Route path="/TeamMembers" exact element={<TeamMembers/>}/>
+                <Route path="/ProjectType" exact element={<ProjectType/>}/>
+                <Route path="/Project" exact element={<Project/>}/>
+                <Route path="/State" exact element={<State/>}/>
                 <Route element={<NotFound/>}/>
             </Routes>
         </Layout>
