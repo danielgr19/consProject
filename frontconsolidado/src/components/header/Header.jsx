@@ -7,12 +7,12 @@ import { Link } from "react-router-dom";
 const Header = () => (
   <header className="header">
     <Link to="/">
-      <img className="header__img" src="http://localhost:8080/logo512.png" alt="logo" />
+      <img className="header__img" src="http://localhost:8080/logopri.png" alt="logo" />
     </Link>
 
     <div className="header__menu">
       <div className="header__menu--profile">
-        <img src="{ userIcon }" alt="" />
+        <img src="http://localhost:8080/logo512.png" alt="" />
         <p>Menu</p>
       </div>
       <ul>

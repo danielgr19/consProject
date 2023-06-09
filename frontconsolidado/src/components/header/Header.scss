@@ -1,12 +1,14 @@
 .header {
+    margin: auto;
     align-items: center;
-    background: #17F1CD;
+    background: #ebedef;
     color: #4D6460;
     display: flex;
-    height: 100px;
+    height: 70%;
     justify-content: space-between;
     top: 0px;
     width: 100%;
+    border: 20px;
   }
   
   .header__img {
