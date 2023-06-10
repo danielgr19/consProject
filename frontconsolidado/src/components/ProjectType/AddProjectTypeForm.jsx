@@ -23,14 +23,14 @@ const handleInputChange = (event) => {
         setProjectType(initialFormState);
       }}
     >
-      <label>description</label>
+      <label> Description: </label>
       <input
         type="text"
         name="description"
         value={projectType.description}
         onChange={handleInputChange}
       />
-      <label>type_of_project</label>
+      <label> Type Project: </label>
       <input
         type="text"
         name="type_of_project"

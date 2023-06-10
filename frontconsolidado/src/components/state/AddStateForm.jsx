@@ -22,14 +22,14 @@ const handleInputChange = (event) => {
         setState(initialFormState);
       }}
     >
-      <label>State Name</label>
+      <label> State Name: </label>
       <input
         type="text"
         name="stateName"
         value={state.stateName}
         onChange={handleInputChange}
       />
-      <label>Description</label>
+      <label> Description: </label>
       <input
         type="text"
         name="descripcion"

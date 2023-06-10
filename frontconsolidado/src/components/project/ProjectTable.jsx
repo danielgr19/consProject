@@ -4,10 +4,10 @@ const ProjectTable = (props) => (
   <table>
     <thead>
       <tr>
-        <th>ID BD</th>
-        <th>projectName</th>
-        <th>codeName</th>
-        <th>email</th>
+        <th>ID </th>
+        <th> ProjectName</th>
+        <th> Code</th>
+        <th> Description  </th>
       </tr>
     </thead>
     <tbody>

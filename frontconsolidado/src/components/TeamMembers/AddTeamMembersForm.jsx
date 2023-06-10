@@ -22,14 +22,14 @@ const handleInputChange = (event) => {
         setTeamMembers(initialFormState);
       }}
     >
-      <label>Name</label>
+      <label> Name: </label>
       <input
         type="text"
         name="name"
         value={teamMembers.name}
         onChange={handleInputChange}
       />
-      <label>last name</label>
+      <label> Last name: </label>
       <input
         type="text"
         name="lastName"
@@ -37,7 +37,7 @@ const handleInputChange = (event) => {
         onChange={handleInputChange}
       />
 
-      <label>rol</label>
+      <label> Rol: </label>
       <input
         type="text"
         name="rol"

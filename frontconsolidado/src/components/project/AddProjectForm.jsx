@@ -22,14 +22,14 @@ const handleInputChange = (event) => {
         setProject(initialFormState);
       }}
     >
-      <label>First Name</label>
+      <label> Code: </label>
       <input
         type="text"
         name="projectName"
         value={project.projectName}
         onChange={handleInputChange}
       />
-      <label>  Username: </label>
+      <label>  Project Name: </label>
       <input
         type="text"
         name="codeName"
@@ -37,14 +37,15 @@ const handleInputChange = (event) => {
         onChange={handleInputChange}
       />
 
-      <label>email</label>
+      <label> Description: </label>
       <input
         type="text"
         name="email"
         value={project.email}
         onChange={handleInputChange}
       />
-      <button>Add new project</button>
+      
+       <button> Add new project</button>
     </form>
   );
 };

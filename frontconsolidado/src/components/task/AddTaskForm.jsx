@@ -23,7 +23,7 @@ const handleInputChange = (event) => {
       }}
     >
 
-    <label>Task Name</label>
+    <label> Task Name: </label>
       <input
         type="text"
         name="taskName"
@@ -31,7 +31,7 @@ const handleInputChange = (event) => {
         onChange={handleInputChange}
       />
 
-      <label>Task Description</label>
+      <label> Task Description: </label>
       <input
         type="text"
         name="taskDescription"
@@ -39,7 +39,7 @@ const handleInputChange = (event) => {
         onChange={handleInputChange}
       />
 
-      <label>Start Date</label>
+      <label> Start Date: </label>
       <input
         type="text"
         name="startDate"
@@ -47,7 +47,7 @@ const handleInputChange = (event) => {
         onChange={handleInputChange}
       />
       
-      <label>Finish Date</label>
+      <label> Finish Date: </label>
       <input
         type="text"
         name="finishDate"

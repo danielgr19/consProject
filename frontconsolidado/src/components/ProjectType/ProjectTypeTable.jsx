@@ -4,7 +4,7 @@ const ProjectTypeTable = (props) => (
   <table>
     <thead>
       <tr>
-        <th>ID BD</th>
+        <th>ID </th>
         <th>name</th>
         <th>lastName</th>
         <th>rol</th>
