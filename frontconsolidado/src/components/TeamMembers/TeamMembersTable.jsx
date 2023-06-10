@@ -1,4 +1,5 @@
 import React from "react";
+import "../Common/Styles/styles.scss";
 
 const TeamMembersTable = (props) => (
   <table>
@@ -26,7 +27,7 @@ const TeamMembersTable = (props) => (
                       className="button muted-button">
                         Edit
                       </button>
-                      <button
+                      <button className='button'
                         onClick={() => props.deleteTeamMembers(teamMembers.id)}>
                           Delete
                         </button>

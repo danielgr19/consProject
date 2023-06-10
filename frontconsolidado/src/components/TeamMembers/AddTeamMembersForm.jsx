@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "../Common/Styles/styles.scss";
 
 const AddTeamMembersForm = (props) => {
 
@@ -44,7 +45,7 @@ const handleInputChange = (event) => {
         value={teamMembers.rol}
         onChange={handleInputChange}
       />
-      <button>Add new Team Members</button>
+      <button className='button'>Add</button>
     </form>
   );
 };

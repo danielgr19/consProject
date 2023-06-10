@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import "../Common/Styles/styles.scss";
 
 const EditTeamMembersForm = (props) => {
   const [teamMembers, setTeamMembers] = useState(props.currentTeamMembers);
@@ -42,7 +43,7 @@ const EditTeamMembersForm = (props) => {
         onChange={handleInputChange}
       />
 
-      <button>Update Team Members</button>
+      <button className='button'>Update Team Members</button>
       <button
         onClick={() => props.setEditing(false)}
         className="button muted-button"
