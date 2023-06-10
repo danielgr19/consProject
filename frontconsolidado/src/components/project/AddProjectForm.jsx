@@ -29,7 +29,7 @@ const handleInputChange = (event) => {
         value={project.projectName}
         onChange={handleInputChange}
       />
-      <label>Username</label>
+      <label>  Username: </label>
       <input
         type="text"
         name="codeName"

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./Project.scss";
+import "../Common/Styles/styles.scss";
 import ProjectTable from "./ProjectTable";
 import AddProjectForm from "./AddProjectForm";
 import EditProjectForm from "./EditProjectForm";
@@ -122,7 +122,7 @@ const Project = () => {
 
   return (
     <div className="container">
-      <h1>CRUD App with Hooks</h1>
+      <h1>Projects</h1>
       <div className="flex-row">
         <div className="flex-large">
           {editing ? (

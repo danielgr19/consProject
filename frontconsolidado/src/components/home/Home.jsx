@@ -3,7 +3,7 @@ import './Home.scss';
 
 const Home = () => (
     <div className="tittle_home">
-        SOFTWARE DE GESTION DE PROYECTOS
+        <h1>Project Management Software</h1>
     </div>
    
 )
